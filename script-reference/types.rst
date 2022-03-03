@@ -1059,6 +1059,14 @@ Set operations
 You can compute the union, intersection, or difference of two sets
 using the ``|``, ``&``, and ``-`` operators.
 
+.. note::
+
+   Avoid the use of ``|`` to grow an existing set. Instead of ``s = s | new_s``,
+   use a :zeek:keyword:`for`-loop to iterate over the new set and
+   :zeek:keyword:`add` its items individually. Such use of ``|`` requires
+   copying both input sets and thus quickly deteriorates runtime. Zeek does
+   not offer assignment variants (such as ``|=``) for these operators.
+
 You can compare sets for equality (they have exactly the same elements)
 using ``==``.  The ``<`` operator returns ``T`` if the lefthand operand
 is a proper subset of the righthand operand.  Similarly, ``<=``
