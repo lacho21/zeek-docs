@@ -58,7 +58,7 @@ Types
 
    :Type: :zeek:type:`record`
 
-      ts: :zeek:type:`time` :zeek:attr:`&log`
+      start_time: :zeek:type:`time` :zeek:attr:`&log`
          This is the time of the first packet.
 
       uid: :zeek:type:`string` :zeek:attr:`&log`
